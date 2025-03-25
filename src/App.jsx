@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import AppLayout from "./layouts/app-layout";
-import Landing from "./pages/landing";
+import Homepage from "./pages/homepage";
 import Dashboard from "./pages/dashboard";
 import Auth from "./pages/auth";
 import RedirectLink from "./pages/redirect-link";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Landing />,
+        element: <Homepage />,
       },
       {
         path: "/dashboard",

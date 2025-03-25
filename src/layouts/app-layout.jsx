@@ -5,7 +5,7 @@ import Footer from "@/components/home/footer";
 
 const AppLayout = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
+    <div className="container px-4 mx-auto max-w-7xl">
       <Header />
 
       <main className="min-h-screen ">
