@@ -1,11 +1,47 @@
-import { Button } from "./components/ui/button";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import AppLayout from "./layouts/app-layout";
+import Landing from "./pages/landing";
+import Dashboard from "./pages/dashboard";
+import Auth from "./pages/auth";
+import RedirectLink from "./pages/redirect-link";
+import Link from "./pages/link";
+
+import { ThemeProvider } from "./components/theme-provider";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Landing />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/auth",
+        element: <Auth />,
+      },
+      {
+        path: "/link/:id",
+        element: <Link />,
+      },
+      {
+        path: "/:id",
+        element: <RedirectLink />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
-    <div className="text-center">
-      <h1 className="mb-4 text-5xl text-red-500">App</h1>
-      <Button>Click me</Button>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 };
 
